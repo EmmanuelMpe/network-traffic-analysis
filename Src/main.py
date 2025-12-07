@@ -16,10 +16,6 @@ total_volume_mb = dataFrame['ByteCount'].sum() / 1e6  # Convert to Megabytes
 avg_packet_size = dataFrame['Avg_Packet_Size'].mean()
 top_protocol = dataFrame.groupby('Protocol')['ByteCount'].sum().idxmax()
 
-print(f"--- NETWORK REPORTING KPIs ---")
-print(f"1. Total Traffic Volume: {total_volume_mb:.2f} MB")
-print(f"2. Avg Packet Size: {avg_packet_size:.2f} Bytes")
-print(f"3. Top Bandwidth Consumer: {top_protocol}")
 
 # SEABORN VISUALIZATIONS
 
@@ -47,4 +43,4 @@ sns.boxplot(data=dataFrame,
 plt.title('Throughput Stability Analysis (Bytes/Sec)')
 plt.show()
 
-dataFrame.to_csv('cleaned_network_data.csv', index=False)
+#dataFrame.to_csv('cleaned_network_data.csv', index=False)
